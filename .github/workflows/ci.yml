@@ -1,0 +1,29 @@
+name: build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Sematic Release
+        run: |
+          npm install -g semantic-release
+          semantic-release --prepare --publish @semantic-release/github --verify-conditions @semantic-release/github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
