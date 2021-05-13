@@ -24,6 +24,6 @@ jobs:
       - name: Sematic Release
         run: |
           npm install -g semantic-release
-          semantic-release
+          semantic-release --prepare --publish @semantic-release/github --verify-conditions @semantic-release/github
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
