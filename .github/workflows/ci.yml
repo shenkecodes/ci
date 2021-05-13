@@ -22,8 +22,6 @@ jobs:
           node-version: 12
 
       - name: Sematic Release
-        run: |
-          npm install -g semantic-release
-          semantic-release --prepare --publish @semantic-release/github --verify-conditions @semantic-release/github
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
