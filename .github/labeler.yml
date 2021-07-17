@@ -1,8 +1,8 @@
-# Add 'repo' label to any root file changes
+# Add 'help wanted' label to any root file changes
 help wanted:
   - '*'
 
-# Add '@domain/core' label to any change within the 'core' package
+# Add 'enhancement' label to any change within the '.github' package
 enhancement:
   - .github/*
   - .gitignore
