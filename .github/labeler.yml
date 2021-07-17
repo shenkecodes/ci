@@ -5,3 +5,5 @@ help wanted:
 # Add '@domain/core' label to any change within the 'core' package
 enhancement:
   - .github/*
+  - .gitignore
+  - README.md
